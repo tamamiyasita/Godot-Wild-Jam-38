@@ -28,7 +28,6 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed('pump_switch'):
 		if pump == null:
 			pump = PumpBox.instance()
-			pump
 			pump.position.y += 10
 			pump.position.x += 13
 			add_child(pump)

@@ -1,9 +1,24 @@
 extends Node2D
 
+export(PackedScene) var Pump
+export(PackedScene) var Chain
+
 onready var chain :Node2D = $Chin_x
 onready var joints :PinJoint2D = $JointBody
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	var p = Pump.instance()
+	add_child(p)
+	for i in range(9):
+		var c = Chain.instance()
+		if i == 0:
+			c.set_node_b(p.get_path())
+		else:
+			c.set_node_b(c.get_path())
+		
+		
+	
+	
 	joints.set_node_a(get_parent().get_path())
 	shot()
 	
