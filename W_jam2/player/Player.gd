@@ -2,7 +2,8 @@ extends RigidBody2D
 
 export var move_force_amlitude := 600.0
 onready var fan = $heri_body/fan_L 
-
+export(PackedScene) var PumpBox
+var pump = null
 var fan_speed = 0
 
 func _physics_process(delta: float) -> void:
@@ -23,10 +24,19 @@ func _physics_process(delta: float) -> void:
 		fan_speed = .15
 		
 
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed('pump_switch'):
+		if pump == null:
+			pump = PumpBox.instance()
+			pump
+			pump.position.y += 10
+			pump.position.x += 13
+			add_child(pump)
 
 
-
-
+		elif pump != null:
+			pump.collect()
+			pump = null
 
 
 
