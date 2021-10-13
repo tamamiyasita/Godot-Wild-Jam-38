@@ -27,23 +27,75 @@ position = Vector2( 0, 4 )
 script = SubResource( 1 )
 
 [node name="Chain2" parent="Chin_x" instance=ExtResource( 1 )]
+position = Vector2( -4, 4 )
+rotation = 1.5708
+
+[node name="PinJoint2D" parent="Chin_x/Chain2" index="2"]
+node_b = NodePath("../../Chain3")
+
+[node name="AnimationPlayer" parent="Chin_x/Chain2" index="3"]
+autoplay = ""
 
 [node name="Chain3" parent="Chin_x" instance=ExtResource( 1 )]
+position = Vector2( -8, 8 )
+
+[node name="PinJoint2D" parent="Chin_x/Chain3" index="2"]
+node_b = NodePath("../../Chain4")
 
 [node name="Chain4" parent="Chin_x" instance=ExtResource( 1 )]
+position = Vector2( -4, 12 )
+rotation = -1.5708
+
+[node name="PinJoint2D" parent="Chin_x/Chain4" index="2"]
+node_b = NodePath("../../Chain5")
 
 [node name="Chain5" parent="Chin_x" instance=ExtResource( 1 )]
+position = Vector2( 4, 12 )
+rotation = -1.5708
+
+[node name="PinJoint2D" parent="Chin_x/Chain5" index="2"]
+node_b = NodePath("../../Chain6")
 
 [node name="Chain6" parent="Chin_x" instance=ExtResource( 1 )]
+position = Vector2( 8, 8 )
+rotation = 3.14159
+
+[node name="PinJoint2D" parent="Chin_x/Chain6" index="2"]
+node_b = NodePath("../../Chain7")
 
 [node name="Chain7" parent="Chin_x" instance=ExtResource( 1 )]
+position = Vector2( 8, 0 )
+rotation = 3.14159
+
+[node name="PinJoint2D" parent="Chin_x/Chain7" index="2"]
+node_b = NodePath("../../Chain8")
 
 [node name="Chain8" parent="Chin_x" instance=ExtResource( 1 )]
+position = Vector2( 8, -8 )
+rotation = 3.14159
+
+[node name="PinJoint2D" parent="Chin_x/Chain8" index="2"]
+node_b = NodePath("../../Chain9")
 
 [node name="Chain9" parent="Chin_x" instance=ExtResource( 1 )]
+position = Vector2( 4, -12 )
+rotation = 1.5708
+
+[node name="PinJoint2D" parent="Chin_x/Chain9" index="2"]
+node_b = NodePath("../../Pomp")
 
 [node name="Pomp" parent="Chin_x" instance=ExtResource( 2 )]
 visible = true
-position = Vector2( 0, 72 )
+position = Vector2( 0, -8 )
+linear_velocity = Vector2( 0, 10 )
 
 [editable path="Chin_x/Chain1"]
+[editable path="Chin_x/Chain2"]
+[editable path="Chin_x/Chain3"]
+[editable path="Chin_x/Chain4"]
+[editable path="Chin_x/Chain5"]
+[editable path="Chin_x/Chain6"]
+[editable path="Chin_x/Chain7"]
+[editable path="Chin_x/Chain8"]
+[editable path="Chin_x/Chain9"]
+[editable path="Chin_x/Pomp"]

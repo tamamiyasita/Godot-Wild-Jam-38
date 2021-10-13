@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="W_jam2"
-run/main_scene="res://player/Player.tscn"
+run/main_scene="res://main/Main.tscn"
 config/icon="res://icon.png"
 
 [importer_defaults]
@@ -75,6 +75,8 @@ shower={
 2d_physics/layer_1="player"
 2d_physics/layer_2="pump"
 2d_physics/layer_3="terrain"
+2d_physics/layer_4="watering"
+2d_physics/layer_5="water"
 
 [physics]
 

@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://image/window_change_2.png" type="Texture" id=1]
+[ext_resource path="res://main/Main.gd" type="Script" id=2]
+[ext_resource path="res://player/Player.tscn" type="PackedScene" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 208.119, 107.925 )
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Water" type="TextureProgress" parent="CanvasLayer"]
+margin_top = 45.0
+margin_right = 385.0
+margin_bottom = 86.0
+value = 50.0
+texture_progress = ExtResource( 1 )
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SolarPower" type="TextureProgress" parent="CanvasLayer"]
+margin_left = 244.977
+margin_top = 49.7568
+margin_right = 629.977
+margin_bottom = 90.7568
+value = 50.0
+texture_progress = ExtResource( 1 )
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PoolVector2Array( 1025.09, 347.495, 521.628, 347.495, 513.142, 593.568, 1005.29, 593.568 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Polygon2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Polygon2D/StaticBody2D"]
+position = Vector2( 743.876, 458.205 )
+shape = SubResource( 1 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 808.93, 263.044 )
