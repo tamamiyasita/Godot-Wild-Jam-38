@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://image/ponp.png" type="Texture" id=1]
 [ext_resource path="res://pump/Pomp.gd" type="Script" id=2]
@@ -28,7 +28,7 @@ tracks/1/path = NodePath(".:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/keys = {
 "times": PoolRealArray( 0, 0.09 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -49,6 +49,50 @@ tracks/2/keys = {
 "method": "queue_free"
 } ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("Sprite:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.09 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 0.01 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Particles2D2:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=16]
+resource_name = "out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Particles2D3:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "shot"
@@ -61,7 +105,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = false
 tracks/0/keys = {
-"times": PoolRealArray( 0.01, 0.28 ),
+"times": PoolRealArray( 0.01, 0.26 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1, 0.01 ), Vector2( 1, 1 ) ]
@@ -73,7 +117,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = false
 tracks/1/keys = {
-"times": PoolRealArray( 0.01, 0.28 ),
+"times": PoolRealArray( 0.01, 0.26 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1, 0.01 ), Vector2( 1, 1 ) ]
@@ -85,7 +129,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = false
 tracks/2/keys = {
-"times": PoolRealArray( 0.01, 0.28 ),
+"times": PoolRealArray( 0.01, 0.26 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 0, 0 ), Vector2( 0, 0 ) ]
@@ -97,7 +141,7 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = false
 tracks/3/keys = {
-"times": PoolRealArray( 0, 0.29 ),
+"times": PoolRealArray( 0, 0.27 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ 3, 0 ]
@@ -109,7 +153,7 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 0.3 ),
+"times": PoolRealArray( 0, 0.28 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
@@ -121,17 +165,113 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0, 0.39, 0.4 ),
+"times": PoolRealArray( 0, 0.37, 0.38 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ 8.0, 8.0, 1.0 ]
+"values": [ 8.0, 8.0, 1.2 ]
 }
 
-[sub_resource type="CapsuleShape2D" id=4]
+[sub_resource type="Animation" id=4]
+resource_name = "water supply"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 2, 2 ), Vector2( 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Area2D/Light2D:energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 2.0, 0.0 ]
+}
+
+[sub_resource type="CapsuleShape2D" id=5]
 radius = 3.0
 height = 2.0
 
+[sub_resource type="CanvasItemMaterial" id=7]
+
+[sub_resource type="Curve" id=8]
+min_value = -360.0
+max_value = 360.0
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.532895, 218.455 ), -459.189, -459.189, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=9]
+curve = SubResource( 8 )
+
+[sub_resource type="Gradient" id=10]
+offsets = PoolRealArray( 0.0232558, 0.155039, 0.232558, 0.775194, 0.922481 )
+colors = PoolColorArray( 1, 1, 1, 0.321569, 2, 2, 2, 1, 0.871094, 0.987538, 1, 1, 0.828125, 0.842392, 1, 0.583871, 1.82, 1.82, 1.82, 0.14 )
+
+[sub_resource type="GradientTexture" id=11]
+gradient = SubResource( 10 )
+
+[sub_resource type="Curve" id=12]
+_data = [ Vector2( 0, 0.1625 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.744318 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=13]
+curve = SubResource( 12 )
+
+[sub_resource type="ParticlesMaterial" id=14]
+lifetime_randomness = 0.3
+flag_disable_z = true
+direction = Vector3( 0, 1, 0 )
+spread = 20.0
+gravity = Vector3( 0, 250, 0 )
+initial_velocity = -180.0
+initial_velocity_random = 0.34
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel_random = 1.0
+angle_random = 1.0
+angle_curve = SubResource( 9 )
+scale = 0.4
+scale_random = 1.0
+scale_curve = SubResource( 13 )
+color_ramp = SubResource( 11 )
+
+[sub_resource type="StreamTexture" id=15]
+load_path = "res://.import/Par_2.png-d0376140a5485f22e83a7c5ba1d1dfbc.stex"
+
+[sub_resource type="CanvasItemMaterial" id=17]
+
+[sub_resource type="ParticlesMaterial" id=18]
+lifetime_randomness = 0.3
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+spread = 20.0
+gravity = Vector3( 0, 250, 0 )
+initial_velocity = -180.0
+initial_velocity_random = 0.34
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel_random = 1.0
+angle_random = 1.0
+angle_curve = SubResource( 9 )
+scale = 0.4
+scale_random = 1.0
+scale_curve = SubResource( 13 )
+color_ramp = SubResource( 11 )
+
+[sub_resource type="StreamTexture" id=19]
+load_path = "res://.import/Par_2.png-d0376140a5485f22e83a7c5ba1d1dfbc.stex"
+
 [node name="Pomp" type="RigidBody2D"]
+z_index = 1
 collision_layer = 2
 collision_mask = 20
 mass = 0.714286
@@ -149,14 +289,49 @@ shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Rill = SubResource( 2 )
+anims/in = SubResource( 6 )
+anims/out = SubResource( 16 )
 anims/shot = SubResource( 3 )
+"anims/water supply" = SubResource( 4 )
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource( 4 )
+shape = SubResource( 5 )
+
+[node name="Light2D" type="Light2D" parent="Area2D"]
+texture = ExtResource( 1 )
+energy = 0.0
+
+[node name="Particles2D2" type="Particles2D" parent="."]
+light_mask = 0
+material = SubResource( 7 )
+position = Vector2( 0, 8 )
+emitting = false
+amount = 40
+lifetime = 0.2
+one_shot = true
+explosiveness = 0.13
+local_coords = false
+draw_order = 1
+process_material = SubResource( 14 )
+texture = SubResource( 15 )
+
+[node name="Particles2D3" type="Particles2D" parent="."]
+light_mask = 0
+material = SubResource( 17 )
+position = Vector2( 0, -8 )
+emitting = false
+amount = 40
+lifetime = 0.2
+one_shot = true
+explosiveness = 0.13
+local_coords = false
+draw_order = 1
+process_material = SubResource( 18 )
+texture = SubResource( 19 )
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]

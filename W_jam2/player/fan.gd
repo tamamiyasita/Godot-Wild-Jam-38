@@ -13,5 +13,5 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	print(player.fan_speed)
+#	if player.fan_speed > 0.001:
 	rotation += player.fan_speed

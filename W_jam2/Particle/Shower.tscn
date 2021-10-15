@@ -1,52 +1,16 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://image/Par_1.png" type="Texture" id=1]
 [ext_resource path="res://Particle/Energy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Particle/Shower.gd" type="Script" id=3]
 
-[sub_resource type="CanvasItemMaterial" id=1]
-
-[sub_resource type="Curve" id=2]
+[sub_resource type="Curve" id=8]
 min_value = -360.0
 max_value = 360.0
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.532895, 218.455 ), -459.189, -459.189, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=3]
-curve = SubResource( 2 )
-
-[sub_resource type="Gradient" id=4]
-offsets = PoolRealArray( 0.0232558, 0.155039, 0.232558, 0.775194, 0.922481 )
-colors = PoolColorArray( 1, 1, 1, 0.321569, 0.351563, 0.86132, 1, 1, 0.871094, 0.987538, 1, 1, 0.828125, 0.842392, 1, 0.583871, 1.82, 1.82, 1.82, 0.14 )
-
-[sub_resource type="GradientTexture" id=5]
-gradient = SubResource( 4 )
-
-[sub_resource type="Curve" id=6]
-_data = [ Vector2( 0, 0.1625 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.744318 ), 0.0, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=7]
-curve = SubResource( 6 )
-
-[sub_resource type="ParticlesMaterial" id=8]
-lifetime_randomness = 0.3
-flag_disable_z = true
-spread = 20.0
-gravity = Vector3( 0, 200, 0 )
-initial_velocity = -90.0
-initial_velocity_random = 0.34
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-linear_accel = 25.58
-linear_accel_random = 1.0
-angle_random = 1.0
-angle_curve = SubResource( 3 )
-scale = 0.4
-scale_random = 1.0
-scale_curve = SubResource( 7 )
-color_ramp = SubResource( 5 )
-
-[sub_resource type="StreamTexture" id=9]
-load_path = "res://.import/Par_2.png-d0376140a5485f22e83a7c5ba1d1dfbc.stex"
+[sub_resource type="CurveTexture" id=9]
+curve = SubResource( 8 )
 
 [sub_resource type="Gradient" id=10]
 offsets = PoolRealArray( 0.0232558, 0.100775, 0.658915, 0.922481 )
@@ -71,30 +35,84 @@ initial_velocity_random = 0.34
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 angle_random = 1.0
-angle_curve = SubResource( 3 )
+angle_curve = SubResource( 9 )
 scale = 0.2
 scale_random = 1.0
 scale_curve = SubResource( 13 )
 color_ramp = SubResource( 11 )
 
-[node name="Shower" type="Node2D"]
+[sub_resource type="CanvasItemMaterial" id=15]
+
+[sub_resource type="Curve" id=16]
+min_value = -360.0
+max_value = 360.0
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.532895, 218.455 ), -459.189, -459.189, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=17]
+curve = SubResource( 16 )
+
+[sub_resource type="Gradient" id=18]
+offsets = PoolRealArray( 0.0232558, 0.155039, 0.232558, 0.775194, 0.922481 )
+colors = PoolColorArray( 1, 1, 1, 0.321569, 2, 2, 2, 1, 0.871094, 0.987538, 1, 1, 0.828125, 0.842392, 1, 0.583871, 1.82, 1.82, 1.82, 0.14 )
+
+[sub_resource type="GradientTexture" id=19]
+gradient = SubResource( 18 )
+
+[sub_resource type="Curve" id=20]
+_data = [ Vector2( 0, 0.1625 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.744318 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=21]
+curve = SubResource( 20 )
+
+[sub_resource type="ParticlesMaterial" id=22]
+lifetime_randomness = 0.3
+flag_disable_z = true
+spread = 20.0
+gravity = Vector3( 0, 250, 0 )
+initial_velocity = -90.0
+initial_velocity_random = 0.34
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel_random = 1.0
+angle_random = 1.0
+angle_curve = SubResource( 17 )
+scale = 0.4
+scale_random = 1.0
+scale_curve = SubResource( 21 )
+color_ramp = SubResource( 19 )
+
+[sub_resource type="StreamTexture" id=23]
+load_path = "res://.import/Par_2.png-d0376140a5485f22e83a7c5ba1d1dfbc.stex"
+
+[node name="Shower" type="Node2D" groups=[
+"shower",
+]]
+light_mask = 0
+z_index = 3
 script = ExtResource( 3 )
 Energy = ExtResource( 2 )
 
-[node name="Particles2D2" type="Particles2D" parent="."]
-material = SubResource( 1 )
-amount = 600
-lifetime = 4.0
-speed_scale = 1.1
-local_coords = false
-draw_order = 1
-process_material = SubResource( 8 )
-texture = SubResource( 9 )
-
 [node name="Particles2D" type="Particles2D" parent="."]
-amount = 240
-lifetime = 4.0
+visible = false
+light_mask = 0
+emitting = false
+amount = 30
+lifetime = 1.71
+speed_scale = 1.2
 local_coords = false
 draw_order = 1
 process_material = SubResource( 14 )
 texture = ExtResource( 1 )
+
+[node name="Particles2D2" type="Particles2D" parent="."]
+visible = false
+light_mask = 0
+material = SubResource( 15 )
+emitting = false
+amount = 40
+lifetime = 0.3
+speed_scale = 1.1
+local_coords = false
+draw_order = 1
+process_material = SubResource( 22 )
+texture = SubResource( 23 )

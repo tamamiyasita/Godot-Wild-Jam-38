@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "StaticBody2D",
+"class": "Buil",
+"language": "GDScript",
+"path": "res://main/Buil_1.gd"
+} ]
+_global_script_class_icons={
+"Buil": ""
+}
+
 [application]
 
 config/name="W_jam2"
@@ -77,6 +87,7 @@ shower={
 2d_physics/layer_3="terrain"
 2d_physics/layer_4="watering"
 2d_physics/layer_5="water"
+2d_physics/layer_6="tree"
 
 [physics]
 
