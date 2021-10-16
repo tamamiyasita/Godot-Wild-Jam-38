@@ -13,15 +13,21 @@ _global_script_classes=[ {
 "class": "Buil",
 "language": "GDScript",
 "path": "res://main/Buil_1.gd"
+}, {
+"base": "RigidBody2D",
+"class": "Player",
+"language": "GDScript",
+"path": "res://player/Player.gd"
 } ]
 _global_script_class_icons={
-"Buil": ""
+"Buil": "",
+"Player": ""
 }
 
 [application]
 
 config/name="W_jam2"
-run/main_scene="res://main/Main.tscn"
+run/main_scene="res://main/Title.tscn"
 config/icon="res://icon.png"
 
 [importer_defaults]
@@ -88,6 +94,8 @@ shower={
 2d_physics/layer_4="watering"
 2d_physics/layer_5="water"
 2d_physics/layer_6="tree"
+2d_physics/layer_7="cloud"
+2d_physics/layer_8="elec"
 
 [physics]
 

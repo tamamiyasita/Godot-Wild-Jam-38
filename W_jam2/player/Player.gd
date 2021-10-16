@@ -1,4 +1,6 @@
+class_name Player
 extends RigidBody2D
+
 
 export(NodePath) onready var UI = get_node(UI) as CanvasLayer
 export var move_force_amlitude := 600.0
@@ -13,8 +15,14 @@ var pump = null
 
 var f = 0.001
 
-var fan_speed = 0
-var burst = false
+var fan_speed :float = 0
+var burst := false
+var is_shade := false
+
+func _ready() -> void:
+	UI.solar.max_value = move_force_amlitude
+	UI.solar.value = move_force_amlitude
+
 
 func _physics_process(delta: float) -> void:
 	var direction := Vector2(
@@ -25,7 +33,7 @@ func _physics_process(delta: float) -> void:
 		Input.get_action_strength('up')
 	).normalized()
 	
-	applied_force = direction * move_force_amlitude
+	applied_force = direction * UI.solar.value # move_force_amlitude
 	if applied_force:
 		f += .1
 #		f += abs(linear_velocity.y+linear_velocity.x) * 0.0001
@@ -37,6 +45,11 @@ func _physics_process(delta: float) -> void:
 		f = clamp(f, 0.01, 1)
 		fan_speed = f
 	
+	if !is_shade:
+		UI.solar_update(2.0)
+	elif is_shade:
+		UI.solar_update(-5.0)
+		
 
 	
 

@@ -335,6 +335,9 @@ PumpBox = ExtResource( 8 )
 
 [node name="UI" parent="." instance=ExtResource( 13 )]
 
+[node name="SolarPower" parent="UI" index="1"]
+step = 0.1
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 6, 2 )
 shape = SubResource( 2 )
@@ -373,7 +376,6 @@ anims/flip_R = SubResource( 4 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 rotating = true
-current = true
 zoom = Vector2( 0.5, 0.5 )
 limit_left = -10000
 limit_top = -1000
@@ -383,7 +385,7 @@ limit_smoothed = true
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0
-collision_mask = 36
+collision_mask = 164
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 modulate = Color( 1, 0.0509804, 0.0509804, 1 )
