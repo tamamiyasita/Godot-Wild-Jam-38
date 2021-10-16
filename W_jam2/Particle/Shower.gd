@@ -27,7 +27,7 @@ func shower() -> void:
 			r = rand_range(-147.0, 27.0)
 		e.linear_velocity.x += r
 		add_child(e)
-		get_tree().call_group("UI", "water_update", -.3)
+		get_tree().call_group("UI", "water_update", -.2)
 			
 		shower()
 	else:

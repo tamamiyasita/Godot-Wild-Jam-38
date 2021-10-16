@@ -1,0 +1,257 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://main/Tree3.tscn" type="PackedScene" id=1]
+[ext_resource path="res://main/Buil_1.gd" type="Script" id=2]
+[ext_resource path="res://image/bill_2.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 135.803, 292.492 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 24.0363, 26.6335 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "default"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Light2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Face:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "ok"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Face:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Light2D:energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.5, 1.0 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "default"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Light2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Face:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "ok"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Face:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Light2D:energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.5, 1.0 ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "default"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Light2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Face:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "ok"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Face:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Light2D:energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.5, 1.0 ]
+}
+
+[node name="Buil2_2" type="StaticBody2D"]
+collision_layer = 4
+script = ExtResource( 2 )
+
+[node name="bill_2" type="Sprite" parent="."]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 72.8531, 301.571 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2( -86.9738, 83.642 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2( -86.2247, 184.778 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2( -86.9738, 301.646 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="."]
+position = Vector2( -85.4756, 424.507 )
+shape = SubResource( 2 )
+
+[node name="Tree3" parent="." instance=ExtResource( 1 )]
+position = Vector2( -83.3956, 41.4524 )
+scale = Vector2( 2, 2 )
+z_index = -1
+
+[node name="Face" parent="Tree3" index="3"]
+position = Vector2( -16.2858, -9.84953 )
+
+[node name="Tree4" parent="." instance=ExtResource( 1 )]
+position = Vector2( -82.8659, 145.28 )
+scale = Vector2( 2, 2 )
+z_index = -1
+
+[node name="Face" parent="Tree4" index="3"]
+position = Vector2( -16.2858, -9.84953 )
+
+[node name="AnimationPlayer" parent="Tree4" index="4"]
+anims/default = SubResource( 3 )
+anims/ok = SubResource( 4 )
+
+[node name="Tree5" parent="." instance=ExtResource( 1 )]
+position = Vector2( -82.3362, 262.35 )
+scale = Vector2( 2, 2 )
+z_index = -1
+
+[node name="Face" parent="Tree5" index="3"]
+position = Vector2( -16.2858, -9.84953 )
+
+[node name="AnimationPlayer" parent="Tree5" index="4"]
+anims/default = SubResource( 5 )
+anims/ok = SubResource( 6 )
+
+[node name="Tree6" parent="." instance=ExtResource( 1 )]
+position = Vector2( -83.3956, 382.07 )
+scale = Vector2( 2, 2 )
+z_index = -1
+
+[node name="Face" parent="Tree6" index="3"]
+position = Vector2( -16.2858, -9.84953 )
+
+[node name="AnimationPlayer" parent="Tree6" index="4"]
+anims/default = SubResource( 7 )
+anims/ok = SubResource( 8 )
+
+[editable path="Tree3"]
+[editable path="Tree4"]
+[editable path="Tree5"]
+[editable path="Tree6"]

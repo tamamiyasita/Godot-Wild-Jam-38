@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://image/heriport.png" type="Texture" id=1]
+[ext_resource path="res://main/Pool_2.tscn" type="PackedScene" id=2]
+[ext_resource path="res://level/Heriport.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 51.4125, 18.8701 )
+
+[node name="Heriport" type="Sprite" groups=[
+"port",
+]]
+position = Vector2( 920.62, 804.839 )
+texture = ExtResource( 1 )
+script = ExtResource( 3 )
+ENDsign = ExtResource( 2 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 2.77795, 23.4142 )
+shape = SubResource( 1 )

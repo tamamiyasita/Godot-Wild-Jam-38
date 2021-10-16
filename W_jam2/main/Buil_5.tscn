@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://main/Tree.tscn" type="PackedScene" id=1]
+[ext_resource path="res://main/Tree2.tscn" type="PackedScene" id=2]
+[ext_resource path="res://main/Buil_1.gd" type="Script" id=3]
+[ext_resource path="res://image/bill_4.png" type="Texture" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 165.993, 301.863 )
+
+[node name="Buil_5" type="StaticBody2D"]
+collision_layer = 4
+script = ExtResource( 3 )
+
+[node name="bill_1" type="Sprite" parent="."]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.0780058, 240.081 )
+shape = SubResource( 1 )
+
+[node name="Tree" parent="." instance=ExtResource( 1 )]
+position = Vector2( -154.808, -87.1191 )
+
+[node name="Tree2" parent="." instance=ExtResource( 1 )]
+position = Vector2( -108.122, -87.065 )
+
+[node name="Tree7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 112.132, -86.9257 )
+
+[node name="Tree8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 158.983, -87.1578 )
+
+[node name="Tree3" parent="." instance=ExtResource( 2 )]
+position = Vector2( -59.7491, -68.8982 )
+
+[node name="Tree4" parent="." instance=ExtResource( 2 )]
+position = Vector2( -30.4881, -68.5134 )
+
+[node name="Tree5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 16.9249, -68.5883 )
+
+[node name="Tree6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 53.0777, -68.6235 )

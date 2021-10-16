@@ -7,3 +7,4 @@ func _on_Area2D_area_entered(area: Area2D) -> void:
 		count += 1
 	elif count > 10:
 		$AnimationPlayer.play('ok')
+		get_tree().call_group("main", "done_count")

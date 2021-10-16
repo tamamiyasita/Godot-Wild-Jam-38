@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://main/Tree3.tscn" type="PackedScene" id=1]
+[ext_resource path="res://image/bill_2.png" type="Texture" id=2]
+[ext_resource path="res://main/Buil_1.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 135.803, 292.492 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 24.0363, 26.6335 )
+
+[node name="Buil2" type="StaticBody2D"]
+collision_layer = 4
+script = ExtResource( 3 )
+
+[node name="bill_2" type="Sprite" parent="."]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -73.5168, 298.649 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2( 86.0529, 83.642 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2( 86.802, 184.778 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2( 86.0529, 301.646 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="."]
+position = Vector2( 87.5511, 424.507 )
+shape = SubResource( 2 )
+
+[node name="Tree3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 82.7182, 44.74 )
+scale = Vector2( 2, 2 )
+z_index = -1
+
+[node name="Tree4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 81.3834, 146.855 )
+scale = Vector2( 2, 2 )
+z_index = -1
+
+[node name="Tree5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 82.0905, 263.881 )
+scale = Vector2( 2, 2 )
+z_index = -1
+
+[node name="Tree6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 82.0905, 382.881 )
+scale = Vector2( 2, 2 )
+z_index = -1

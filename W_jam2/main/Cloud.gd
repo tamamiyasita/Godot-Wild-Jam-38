@@ -30,6 +30,5 @@ func _on_Timer_timeout() -> void:
 	add_child(elec)
 	elec.global_position = global_position
 	elec.global_position.x += rand_range(-150, 150)
-	$Timer.start(3)
 
 

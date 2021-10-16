@@ -62,7 +62,7 @@ tracks/3/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 1, 0.01 ) ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=3]
 resource_name = "in"
 length = 0.5
 tracks/0/type = "value"
@@ -78,7 +78,7 @@ tracks/0/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=4]
 resource_name = "out"
 length = 0.5
 tracks/0/type = "value"
@@ -94,8 +94,7 @@ tracks/0/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "shot"
+[sub_resource type="Animation" id=5]
 length = 0.4
 step = 0.01
 tracks/0/type = "value"
@@ -171,8 +170,7 @@ tracks/5/keys = {
 "values": [ 8.0, 8.0, 1.2 ]
 }
 
-[sub_resource type="Animation" id=4]
-resource_name = "water supply"
+[sub_resource type="Animation" id=6]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:scale")
@@ -199,34 +197,34 @@ tracks/1/keys = {
 "values": [ 0.0, 2.0, 0.0 ]
 }
 
-[sub_resource type="CapsuleShape2D" id=5]
+[sub_resource type="CapsuleShape2D" id=7]
 radius = 3.0
 height = 2.0
 
-[sub_resource type="CanvasItemMaterial" id=7]
+[sub_resource type="CanvasItemMaterial" id=8]
 
-[sub_resource type="Curve" id=8]
+[sub_resource type="Curve" id=9]
 min_value = -360.0
 max_value = 360.0
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.532895, 218.455 ), -459.189, -459.189, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=9]
-curve = SubResource( 8 )
+[sub_resource type="CurveTexture" id=10]
+curve = SubResource( 9 )
 
-[sub_resource type="Gradient" id=10]
+[sub_resource type="Gradient" id=11]
 offsets = PoolRealArray( 0.0232558, 0.155039, 0.232558, 0.775194, 0.922481 )
 colors = PoolColorArray( 1, 1, 1, 0.321569, 2, 2, 2, 1, 0.871094, 0.987538, 1, 1, 0.828125, 0.842392, 1, 0.583871, 1.82, 1.82, 1.82, 0.14 )
 
-[sub_resource type="GradientTexture" id=11]
-gradient = SubResource( 10 )
+[sub_resource type="GradientTexture" id=12]
+gradient = SubResource( 11 )
 
-[sub_resource type="Curve" id=12]
+[sub_resource type="Curve" id=13]
 _data = [ Vector2( 0, 0.1625 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.744318 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=13]
-curve = SubResource( 12 )
+[sub_resource type="CurveTexture" id=14]
+curve = SubResource( 13 )
 
-[sub_resource type="ParticlesMaterial" id=14]
+[sub_resource type="ParticlesMaterial" id=15]
 lifetime_randomness = 0.3
 flag_disable_z = true
 direction = Vector3( 0, 1, 0 )
@@ -238,13 +236,13 @@ orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 linear_accel_random = 1.0
 angle_random = 1.0
-angle_curve = SubResource( 9 )
+angle_curve = SubResource( 10 )
 scale = 0.4
 scale_random = 1.0
-scale_curve = SubResource( 13 )
-color_ramp = SubResource( 11 )
+scale_curve = SubResource( 14 )
+color_ramp = SubResource( 12 )
 
-[sub_resource type="StreamTexture" id=15]
+[sub_resource type="StreamTexture" id=16]
 load_path = "res://.import/Par_2.png-d0376140a5485f22e83a7c5ba1d1dfbc.stex"
 
 [sub_resource type="CanvasItemMaterial" id=17]
@@ -261,11 +259,11 @@ orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 linear_accel_random = 1.0
 angle_random = 1.0
-angle_curve = SubResource( 9 )
+angle_curve = SubResource( 10 )
 scale = 0.4
 scale_random = 1.0
-scale_curve = SubResource( 13 )
-color_ramp = SubResource( 11 )
+scale_curve = SubResource( 14 )
+color_ramp = SubResource( 12 )
 
 [sub_resource type="StreamTexture" id=19]
 load_path = "res://.import/Par_2.png-d0376140a5485f22e83a7c5ba1d1dfbc.stex"
@@ -275,7 +273,7 @@ z_index = 1
 collision_layer = 2
 collision_mask = 20
 mass = 0.714286
-gravity_scale = 8.0
+gravity_scale = 1.2
 linear_velocity = Vector2( 0, 1 )
 linear_damp = 3.0
 angular_velocity = 3.0
@@ -289,17 +287,17 @@ shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Rill = SubResource( 2 )
-anims/in = SubResource( 6 )
-anims/out = SubResource( 16 )
-anims/shot = SubResource( 3 )
-"anims/water supply" = SubResource( 4 )
+anims/in = SubResource( 3 )
+anims/out = SubResource( 4 )
+anims/shot = SubResource( 5 )
+"anims/water supply" = SubResource( 6 )
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource( 5 )
+shape = SubResource( 7 )
 
 [node name="Light2D" type="Light2D" parent="Area2D"]
 texture = ExtResource( 1 )
@@ -307,7 +305,7 @@ energy = 0.0
 
 [node name="Particles2D2" type="Particles2D" parent="."]
 light_mask = 0
-material = SubResource( 7 )
+material = SubResource( 8 )
 position = Vector2( 0, 8 )
 emitting = false
 amount = 40
@@ -316,8 +314,8 @@ one_shot = true
 explosiveness = 0.13
 local_coords = false
 draw_order = 1
-process_material = SubResource( 14 )
-texture = SubResource( 15 )
+process_material = SubResource( 15 )
+texture = SubResource( 16 )
 
 [node name="Particles2D3" type="Particles2D" parent="."]
 light_mask = 0

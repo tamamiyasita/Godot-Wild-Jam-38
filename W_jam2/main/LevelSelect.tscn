@@ -1,41 +1,217 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://main/LevelSelect.gd" type="Script" id=1]
-[ext_resource path="res://image/water_bar3.png" type="Texture" id=2]
+[ext_resource path="res://image/cloud.png" type="Texture" id=2]
+[ext_resource path="res://level_resource.tres" type="Resource" id=3]
+[ext_resource path="res://image/Gugi-Regular.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://image/heri_body2.png" type="Texture" id=5]
+[ext_resource path="res://image/UFO.png" type="Texture" id=6]
+
+[sub_resource type="DynamicFont" id=5]
+size = 48
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 40
+outline_size = 1
+outline_color = Color( 0.388235, 0.862745, 0.756863, 1 )
+use_mipmaps = true
+use_filter = true
+extra_spacing_char = 2
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 48
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 18
+outline_size = 1
+outline_color = Color( 0.827451, 0.619608, 1, 1 )
+use_mipmaps = true
+use_filter = true
+extra_spacing_top = 2
+extra_spacing_char = 5
+extra_spacing_space = -5
+font_data = ExtResource( 4 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "change_scene"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect2:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
 
 [node name="LevelSelect" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+level = ExtResource( 3 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
 color = Color( 0.101961, 0.101961, 0.101961, 1 )
-
-[node name="TextureButton" type="TextureButton" parent="ColorRect"]
-margin_left = 195.088
-margin_top = 242.178
-margin_right = 235.088
-margin_bottom = 282.178
-texture_normal = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureButton2" type="TextureButton" parent="ColorRect"]
-margin_left = 396.903
-margin_top = 295.995
-margin_right = 436.903
-margin_bottom = 335.995
+[node name="RichTextLabel2" type="RichTextLabel" parent="ColorRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -153.997
+margin_top = -124.392
+margin_right = 148.003
+margin_bottom = -67.3917
+custom_fonts/mono_font = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 6 )
+custom_colors/default_color = Color( 1, 0.85098, 0.458824, 1 )
+bbcode_enabled = true
+bbcode_text = "LEVEL SERECT"
+tab_size = 1
+text = "LEVEL SERECT"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="TextureButton3" type="TextureButton" parent="ColorRect"]
-margin_left = 605.445
-margin_top = 295.995
-margin_right = 645.445
-margin_bottom = 335.995
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1.18921
+margin_top = 239.564
+margin_right = -1.18921
+margin_bottom = -260.436
+custom_constants/separation = 15
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[connection signal="pressed" from="ColorRect/TextureButton" to="." method="_on_TextureButton_pressed"]
+[node name="TextureButton3" type="TextureButton" parent="ColorRect/HBoxContainer"]
+margin_left = 332.0
+margin_right = 442.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 110, 100 )
+texture_normal = ExtResource( 5 )
+expand = true
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="ColorRect/HBoxContainer/TextureButton3"]
+anchor_right = 1.0
+margin_left = 10.3181
+margin_top = 9.52441
+margin_right = 10.3181
+margin_bottom = 35.5244
+mouse_filter = 2
+size_flags_stretch_ratio = 0.0
+custom_fonts/mono_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 4 )
+custom_colors/default_color = Color( 0.988235, 1, 0.678431, 1 )
+bbcode_enabled = true
+bbcode_text = "LEVEL 1"
+tab_size = 1
+text = "LEVEL 1"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton4" type="TextureButton" parent="ColorRect/HBoxContainer"]
+margin_left = 457.0
+margin_right = 567.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 110, 100 )
+texture_normal = ExtResource( 2 )
+expand = true
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="ColorRect/HBoxContainer/TextureButton4"]
+anchor_right = 1.0
+margin_left = 10.3181
+margin_top = 9.52441
+margin_right = 10.3181
+margin_bottom = 35.5244
+mouse_filter = 2
+size_flags_stretch_ratio = 0.0
+custom_fonts/mono_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 4 )
+custom_colors/default_color = Color( 1, 0.458824, 0.458824, 1 )
+bbcode_enabled = true
+bbcode_text = "LEVEL 2"
+tab_size = 1
+text = "LEVEL 2"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton5" type="TextureButton" parent="ColorRect/HBoxContainer"]
+margin_left = 582.0
+margin_right = 692.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 110, 100 )
+texture_normal = ExtResource( 6 )
+expand = true
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="ColorRect/HBoxContainer/TextureButton5"]
+anchor_right = 1.0
+margin_left = 10.3181
+margin_top = 9.52441
+margin_right = 10.3181
+margin_bottom = 35.5244
+mouse_filter = 2
+size_flags_stretch_ratio = 0.0
+custom_fonts/mono_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 4 )
+custom_colors/default_color = Color( 1, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "LEVEL 3"
+tab_size = 1
+text = "LEVEL 3"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/change_scene = SubResource( 2 )
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="ColorRect/HBoxContainer/TextureButton3" to="." method="_on_TextureButton3_pressed"]
+[connection signal="pressed" from="ColorRect/HBoxContainer/TextureButton4" to="." method="_on_TextureButton4_pressed"]
+[connection signal="pressed" from="ColorRect/HBoxContainer/TextureButton5" to="." method="_on_TextureButton5_pressed"]
